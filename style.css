@@ -383,17 +383,16 @@ margin-bottom:10px;
 }
 #rechercher_cours {
     height: 3vh;
-    margin-top: 7vh;
+    margin-top: 29px;
 }
 .cours{
     display:flex;
     justify-content:space-between;
     align-items:center;
     height: 15vh;
-    background-color: rgba(0, 0, 0, 0.828);
+    background-color: rgba(0, 0, 0, 0.662);
     margin: auto;
     font-size: x-large;
-    padding: 1%;
     border-radius: 7px;
     width: 100%;
     max-width: 800px;
@@ -413,7 +412,6 @@ margin-bottom:10px;
 
 .actions a {
 padding:8px 12px;
-border:none;
 border-radius:6px;
 text-decoration:none;
 color:white;
