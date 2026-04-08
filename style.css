@@ -1,10 +1,9 @@
 body {
-    min-height: 98vh;
     background-color: rgba(43, 69, 110, 0.945);
     display: flex;
     flex-direction: column;
-    gap: 100px;
     color: wheat;
+
 }
 
 
@@ -310,7 +309,7 @@ margin-bottom:10px;
 
     background:
     linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-    url("/IMAGES_LOGO/image2.avif") center / cover no-repeat;
+    url("../IMAGES_LOGO/image2.avif") center / cover no-repeat;
     /* pourendre sombre le background */
 
     color:white;
@@ -375,7 +374,6 @@ margin-bottom:10px;
 #bloc_cours {
     display: flex;
     flex-direction: column;
-    width: 100%;
     gap: 7vh;
 }
 #liste {
@@ -472,16 +470,12 @@ background:#13ac4b6f;
 
 /* DESCRIPTION DE CHAQUE COURS */
 .presentation-cours{
-max-width: 97vw;
-max-width: 800px;
-margin:auto;
 text-align:center;
-padding:40px;
 }
 
 .bloc-langage{
 background:#111827;
-padding:30px;
+padding:3px;
 border-radius:12px;
 box-shadow:0 10px 30px rgba(0,0,0,0.4);
 margin-top:20px;
