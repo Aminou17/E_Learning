@@ -1,0 +1,65 @@
+Projet : plateforme e-learning JS Learning
+
+PHASE 1
+Finir tous les quiz
+- quiz_js
+- quiz_sql
+- quiz_python
+- quiz_linux
+- quiz_php
+
+PHASE 2
+Créer pages cours
+- cours_js
+- cours_sql
+- cours_python
+- cours_linux
+- cours_php
+
+Chaque page :
+titre
+description
+PDF
+Suivre
+Ajouter
+Quiz
+
+PHASE 3
+Ajouter les PDF
+dossier : cours_pdf/
+
+PHASE 4
+LocalStorage
+- sauvegarder cours suivis
+- sauvegarder score quiz
+- bloquer quiz si cours non suivi
+
+PHASE 5
+Page mes_cours.html
+afficher cours suivis
+
+PHASE 6
+Améliorer UI
+hover
+cartes
+boutons
+
+PHASE 7
+Nettoyage projet
+organisation dossiers
+tests
+footer
+contact
+
+
+
+
+
+
+1.Header
+2. si non connecté, Interdir de faire quiz
+3. Afficher, Veillez vous connectez dans "mes cours", si non connecté
+   4. Modules/pdf
+   5.Liens Videos
+
+Github

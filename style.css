@@ -1,0 +1,814 @@
+body {
+    min-height: 98vh;
+    background-color: rgba(43, 69, 110, 0.945);
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    color: wheat;
+}
+
+
+/*** GENERALE ***/
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-top: 7vh;
+}
+
+p {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 30px;
+    font-size: clamp(1rem, 2vw, 2rem);
+}
+
+
+
+
+nav{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+/* Inscription */
+#forme_inscription {
+    background-color: #184895;
+    width: 100%;
+    border-radius: 10px;
+    padding: 80px 0;
+}
+
+.contaire_input {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 2vh;
+    background-color: #0b1e3cce;
+    border-radius: 10px;
+    padding: 40px 0;
+}
+
+#name_inscription {
+    margin-top: 2vh;
+}
+#mail_inscription {
+    margin-bottom: 45px;
+
+}
+.contaire_input select{
+width: 91%;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contaire_input input {
+    width: 85%;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*** Se connecter ***/
+.btn_login, .btn_inscription {
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    color: black;
+}
+
+.login_link a{
+color:#efbe69;
+text-decoration:none;
+}
+
+.forme_login {
+    height: 70vh;
+    
+}
+
+.forme_login{
+    background-color: #184895;
+    width: 100%;
+    border-radius: 10px;
+    padding: 80px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*** HEADER ***/
+.header{
+    width:99%;
+    background:#0b1a35;
+    padding:15px 5px;
+    
+}
+
+.menu{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo a{
+    font-size:22px;
+    font-weight:bold;
+    color:white;
+    text-decoration:none;
+}
+
+.menu_navigation{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+/* liens navigation */
+.menu_navigation a{
+    color:white;
+    text-decoration:none;
+    font-size:16px;
+}
+
+/* zone utilisateur */
+.menu_user{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+/* boutons utilisateur */
+.btn_user{
+    background:#2563eb;
+    padding:8px 14px;
+    border-radius:6px;
+    color:white;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+}
+
+/* quand on clique */
+.btn_user:hover{
+    background:#1d4ed8;
+}
+
+/* Message qui affiche le nom du user */
+#bonjour_user{
+    color:white;
+}
+
+
+
+
+
+
+
+
+
+/* POUR LES PAGE NON DISPONBLE (Contact et Ajouter) */
+#body_page_indisponible {
+    background-color: rgb(190, 190, 228);
+}
+
+#page_indisponible {
+    font-size: x-large;
+    color: rgb(27, 11, 246);
+    font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** LESS COURS QUE LE USER A EPINGLER ***/
+.body_mes_cours{
+
+background:#0f172a;
+color:white;
+font-family:Arial;
+margin:0;
+
+}
+
+.header_mes_cours{
+    padding:20px;
+    text-align:center;
+    border-bottom:1px solid #1e293b;
+
+}
+
+.main_mes_cours {
+    padding:40px;
+}
+
+#cours_container {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+
+}
+
+.cours_card {
+    background:#1e293b;
+    padding:20px;
+    border-radius:8px;
+    text-align:center;
+}
+
+.cours_card img {
+width:80px;
+margin-bottom:10px;
+
+}
+
+/* message vide */
+    .vide_message {
+    opacity:0.6;
+    text-align:center;
+}
+
+.cours_card {
+    display:block;
+    padding:30px;
+    background:#1e293b;
+    border-radius:10px;
+    text-align:center;
+    text-decoration:none;
+    color:white;
+    font-size:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** ACCEUIL ***/
+.img_acceuil{
+    width: 100%;
+    max-width: 650px;
+    height: 85vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+    url("/IMAGES_LOGO/image2.avif") center / cover no-repeat;
+    /* pourendre sombre le background */
+
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    width: 100%;
+}
+
+.img_acceuil p {
+    text-align: right;
+    font-size: clamp(18px, 2vw, 24px);
+    padding: 10px;
+}
+
+
+
+
+
+
+
+/* DIAPO AUTOMATIQUE*/
+  .diapo{
+      width:100%;  
+      max-width: 100%;  
+      height: 40vh;     
+      position:relative; 
+      overflow:hidden;  
+      margin: auto;      
+  }
+
+.image{
+    margin-top: 50px;
+    width:100%;
+    max-width: 800px;      
+    height:100%;      
+    position:absolute; 
+    opacity:0;  
+    transition:opacity 0.8s; 
+}
+
+.image.active{
+    opacity:1;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* COURS */
+
+#bloc_cours {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 7vh;
+}
+#liste {
+    text-decoration: underline;
+}
+#rechercher_cours {
+    height: 3vh;
+    margin-top: 7vh;
+}
+.cours{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height: 15vh;
+    background-color: rgba(0, 0, 0, 0.828);
+    margin: auto;
+    font-size: x-large;
+    padding: 1%;
+    border-radius: 7px;
+    width: 100%;
+    max-width: 800px;
+    gap: 7vh;
+}
+
+.cours img {
+    height: 100px;
+}
+.cours #img_sql {
+    background-color: wheat;
+}
+.cours #img_c {
+    background-color: wheat;
+}
+
+
+.actions a {
+padding:8px 12px;
+border:none;
+border-radius:6px;
+text-decoration:none;
+color:white;
+font-size:14px;
+cursor:pointer;
+text-align:center;
+font-weight: bold;
+}
+
+.suivre{
+background:#13ac4b6f;
+}
+
+
+
+
+
+
+
+
+
+
+/* VIDEO */
+#video{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap:15px;
+    padding:20px;
+}
+
+#rechercher_cours_video {
+    margin-top: 40px;
+}
+
+.case_module{
+    height:15vh;
+    border-radius:7px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background-color: rgba(253, 254, 255, 0.123);
+    font-weight: bolder;
+    padding: 10px;
+}
+.case_module a {
+    margin-top: 1.5vh;
+}
+
+.video_img{
+    height:10vh;
+}
+
+
+
+
+
+/* DESCRIPTION DE CHAQUE COURS */
+.presentation-cours{
+max-width: 97vw;
+max-width: 800px;
+margin:auto;
+text-align:center;
+padding:40px;
+}
+
+.bloc-langage{
+background:#111827;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+margin-top:20px;
+}
+
+.bloc-langage img{
+width:120px;
+margin-bottom:15px;
+}
+
+.bloc-langage h2{
+color:#f1f5f9;
+margin-bottom:15px;
+}
+
+.bloc-langage p{
+color:#cbd5e1;
+line-height:1.7;
+margin-bottom:12px;
+}
+
+/* boutons */
+
+.actions-langage{
+margin-top:25px;
+display:flex;
+flex-direction:column;
+gap:12px;
+align-items:center;
+}
+
+.actions-langage a, button{
+    width: 250px;
+    padding:12px;
+    border-radius:8px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+
+.btn-cours{
+background:#3b82f6;
+}
+
+.btn-video{
+background:#ef4444;
+}
+
+
+
+
+.btn_ajouter_cours {
+    background:#22c55e;
+    width: 270px;
+    border: 1px;
+    font-size: 16px;
+    
+}
+
+.btn-quiz{
+    background-color: #f39a00;
+
+}
+
+.actions-langage a:hover{
+opacity:0.9;
+}
+
+
+
+
+
+
+
+
+
+.cours-page{
+max-width:800px;
+margin:auto;
+background:#0f172a;
+padding:30px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+text-align:center;
+}
+
+.cours-page img{
+width:120px;
+margin-bottom:20px;
+}
+
+.cours-page h2{
+margin-bottom:15px;
+color:#e2e8f0;
+}
+
+.cours-page p{
+color:#cbd5e1;
+line-height:1.6;
+margin-bottom:15px;
+}
+
+/* pdf */
+.pdf-zone{
+margin-top:20px;
+margin-bottom:20px;
+}
+
+.btn-pdf{
+display:inline-block;
+padding:10px 16px;
+background:#3b82f6;
+color:white;
+text-decoration:none;
+border-radius:6px;
+}
+
+.btn-pdf:hover{
+opacity:0.85;
+}
+
+
+.actions-cours{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:20px;
+}
+
+.actions-cours button,
+.actions-cours a{
+padding:10px 16px;
+border:none;
+border-radius:6px;
+color:white;
+text-decoration:none;
+cursor:pointer;
+}
+
+.actions-cours .suivre{
+background:#22c55e;
+}
+
+.actions-cours .quiz{
+background:#f59e0b;
+}
+
+.actions-cours a:hover,
+.actions-cours button:hover{
+opacity:0.85;
+}
+
+
+
+
+
+
+
+
+/*** PDF ***/
+.pdf_cours {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+iframe{
+width:100%;
+max-width: 600px;
+height:90vh;
+border:none;
+margin: auto;
+}
+
+#source {
+    background-color: rgba(255, 0, 0, 0.801);
+    padding: 5px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*** FOOTER ***/
+
+.footer{
+    background:#0b1a35;
+    color:white;
+    margin-top:60px;
+}
+
+.footer_contenu{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    padding:20px 40px;
+    gap:40px;
+}
+
+.footer_bloc{
+    max-width:150px;
+}
+
+
+.footer_bloc h3,
+.footer_bloc h4{
+    margin-bottom:10px;
+}
+
+.footer_bloc a{
+    display:block;
+    color:rgb(253, 225, 14);
+    text-decoration:none;
+    margin-bottom:6px;
+}
+
+.img_footer {
+    height: 150px;
+}
+/* Quand on clique*/
+.footer_bloc a:hover{
+    text-decoration:underline;
+    color: #44ef4f;
+}
+
+/* bas footer */
+.footer_bas{
+    text-align:center;
+    padding:15px;
+    background:#081326;
+    font-size:14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*** QUIZ ***/
+.conteneur-quiz {
+    margin:auto;
+    width:90%;
+    max-width: 500px;
+    background:#1e293b;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.info-quiz {
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.barre-progression {
+    width:100%;
+    height:8px;
+    background:#334155;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+#progression{
+height:100%;
+width:0%;
+background:#22c55e;
+border-radius:10px;
+}
+
+.reponses button{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:none;
+border-radius:6px;
+background:#334155;
+color:white;
+cursor:pointer;
+}
+
+.reponses button:hover{
+background:#475569;
+}
+
+.bonne{
+background:#22c55e !important;
+}
+
+.mauvaise{
+background:#ef4444 !important;
+}
+
+#btnSuivant{
+width:100%;
+padding:12px;
+border:none;
+border-radius:6px;
+background:#3b82f6;
+color:white;
+font-size:16px;
+cursor:pointer;
+margin-top:10px;
+}
+
+#resultat{
+margin-top:20px;
+text-align:center;
+font-size:20px;
+}
