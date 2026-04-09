@@ -465,7 +465,8 @@ background:#13ac4b6f;
 
 /* VIDEO */
 #video{
-    display:grid;
+    display: flex;
+    flex-wrap: wrap;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap:15px;
     padding:20px;
@@ -473,22 +474,26 @@ background:#13ac4b6f;
 
 #rechercher_cours_video {
     margin-top: 40px;
+    padding: 3px;
+    border-radius: 5px;
 }
 
 .case_module{
-    height:15vh;
+    height:150px;
+    width: 150px;
     border-radius:7px;
 
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    background-color: rgba(253, 254, 255, 0.123);
+    background-color: rgba(14, 56, 99, 0.912);
     font-weight: bolder;
     padding: 10px;
 }
 .case_module a {
     margin-top: 1.5vh;
+    color: rgb(235, 172, 0);
 }
 
 .video_img{
