@@ -1,13 +1,24 @@
-body {
+
+
+
+/*** GENERALE ***/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html, body {
     background-color: rgba(43, 69, 110, 0.945);
     display: flex;
     flex-direction: column;
     color: wheat;
+    margin: 0;
+    height:100%;
+    font-size: clamp(14px, 2vw, 18px);
 
 }
-
-
-/*** GENERALE ***/
 
 main {
     flex: 1;
@@ -19,15 +30,26 @@ main {
 
 h1, h2, h3 {
     text-align: center;
-    margin-top: 7vh;
+    margin: 0;
 }
+h1{
+font-size: clamp(20px, 4vw, 32px);
+}
+
+h2{
+font-size: clamp(18px, 3vw, 26px);
+}
+
 
 p {
     max-width: 600px;
     margin: auto;
     margin-top: 30px;
-    font-size: clamp(1rem, 2vw, 2rem);
+    font-size: clamp(14px, 1.8vw, 18px);
 }
+
+
+
 
 
 
@@ -46,7 +68,8 @@ nav{
 
 /* Inscription */
 #forme_inscription {
-    background-color: #184895;
+    background-color: #163c9c;
+    margin-top: 20px;
     width: 100%;
     border-radius: 10px;
     padding: 80px 0;
@@ -56,7 +79,7 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 80%;
+    width: 600px;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -73,14 +96,7 @@ nav{
     margin-bottom: 45px;
 
 }
-.container_input select{
-width: 91%;
-    padding: 6px 12px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.container_input input {
+.container_input input, select {
     width: 85%;
     padding: 6px 12px;
     border-radius: 5px;
@@ -705,7 +721,8 @@ margin: auto;
 }
 
 .footer_bloc{
-    max-width:150px;
+    flex:1;
+    min-width:180px;
 }
 
 
@@ -716,7 +733,7 @@ margin: auto;
 
 .footer_bloc a{
     display:block;
-    color:rgb(253, 225, 14);
+    color:rgb(223, 178, 0);
     text-decoration:none;
     margin-bottom:6px;
 }
