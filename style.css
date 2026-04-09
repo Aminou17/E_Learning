@@ -16,6 +16,7 @@ html, body {
     color: wheat;
     margin: 0;
     height:100%;
+    width: 100vw;
     font-size: clamp(14px, 2vw, 18px);
 }
 
@@ -77,10 +78,10 @@ nav{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 600px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 95%;
+    max-width: 500px;
+    margin: auto;
+    
     gap: 3vh;
     background-color: #0b1e3cce;
     border-radius: 10px;
@@ -335,7 +336,7 @@ background:#dc2626;
 /*** ACCEUIL ***/
 .img_acceuil{
     width: 100%;
-    max-width: 650px;
+    min-height: 85vh;
     height: 85vh;
 
     background:
@@ -355,6 +356,8 @@ background:#dc2626;
     font-size: clamp(18px, 2vw, 24px);
     padding: 10px;
 }
+
+
 
 
 
@@ -387,7 +390,16 @@ background:#dc2626;
 }
 
 
+#contact{
+    margin: auto;
+}
 
+#nom {
+    display: flex;
+    margin-top: 100px;
+    justify-content: center;
+    
+}
 
 
 
@@ -420,7 +432,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 min-height:15vh;
-background-color: rgba(0, 0, 0, 0.131);
+background-color: rgba(0, 0, 0, 0.315);
 margin:auto;
 font-size: clamp(14px,1.5vw,18px);
 border-radius:7px;
@@ -446,14 +458,14 @@ padding:8px 12px;
 border-radius:6px;
 text-decoration:none;
 color:white;
-font-size:14px;
+font-size: 14px;
 cursor:pointer;
 text-align:center;
 font-weight: bold;
 }
 
 .suivre{
-background:#13ac4bf1;
+background:#13ac4b;
 }
 
 
@@ -501,6 +513,11 @@ background:#13ac4bf1;
 .video_img{
     height:10vh;
 }
+
+#Video_dispo {
+    margin-top: 100px;
+}
+
 
 
 
@@ -555,19 +572,19 @@ align-items:center;
 }
 
 .btn-cours{
-background:#3b82f6;
+background:#223fc2;
 }
 
 .btn-video{
-background:#ef4444;
+background:#f00404;
 }
 
 
 
 
 .btn_ajouter_cours {
-    background:#22c55e;
-    width: 270px;
+    background:#09b94a;
+    width: 250px;
     border: 1px;
     font-size: 16px;
     
@@ -715,6 +732,7 @@ margin: auto;
     background:#0b1a35;
     color:white;
     margin-top:60px;
+    margin-top: 100px;
 }
 
 .footer_contenu{

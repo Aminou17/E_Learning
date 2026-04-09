@@ -67,10 +67,7 @@ if(btn_logout) btn_logout.style.display = "none";
 
 
 
-// =================================
 // DECONNEXION
-// =================================
-
 if(btn_logout){
 
 btn_logout.addEventListener("click", function(){
