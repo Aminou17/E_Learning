@@ -81,7 +81,7 @@ nav{
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    gap: 2vh;
+    gap: 3vh;
     background-color: #0b1e3cce;
     border-radius: 10px;
     padding: 40px 0;
@@ -340,7 +340,7 @@ background:#dc2626;
 
     background:
     linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
-    url("../IMAGES_LOGO/image2.avif") center / cover no-repeat;
+    url("IMAGES_LOGO/image2.avif") center / cover no-repeat;
     /* pourendre sombre le background */
 
     color:white;
@@ -409,6 +409,7 @@ background:#dc2626;
 }
 #liste {
     text-decoration: underline;
+    margin-top: 30px;
 }
 #rechercher_cours {
     height: 3vh;
@@ -419,13 +420,14 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 min-height:15vh;
-background-color: rgba(0,0,0,0.66);
+background-color: rgba(0, 0, 0, 0.131);
 margin:auto;
 font-size: clamp(14px,1.5vw,18px);
 border-radius:7px;
 width:100%;
 max-width:800px;
 gap:20px;
+
 }
 
 .cours img {
@@ -451,7 +453,7 @@ font-weight: bold;
 }
 
 .suivre{
-background:#13ac4b6f;
+background:#13ac4bf1;
 }
 
 
