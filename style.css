@@ -17,15 +17,13 @@ html, body {
     margin: 0;
     height:100%;
     font-size: clamp(14px, 2vw, 18px);
-
 }
 
+body, p, h2, h3, h4 {
+    font-size: clamp(14px,1.5vw,18px);
+}
 main {
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
 }
 
 h1, h2, h3 {
@@ -417,17 +415,17 @@ background:#dc2626;
     margin-top: 29px;
 }
 .cours{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    height: 15vh;
-    background-color: rgba(0, 0, 0, 0.662);
-    margin: auto;
-    font-size: x-large;
-    border-radius: 7px;
-    width: 100%;
-    max-width: 800px;
-    gap: 7vh;
+display:flex;
+justify-content:space-between;
+align-items:center;
+min-height:15vh;
+background-color: rgba(0,0,0,0.66);
+margin:auto;
+font-size: clamp(14px,1.5vw,18px);
+border-radius:7px;
+width:100%;
+max-width:800px;
+gap:20px;
 }
 
 .cours img {
