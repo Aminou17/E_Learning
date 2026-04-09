@@ -1,53 +1,40 @@
-// AJOUTER AUX COURS EPEINGLE
+// AFFICHER LES COURS SUIVIS
 
 document.addEventListener("DOMContentLoaded", function(){
+
+// utilisateur connecté
 let current_user = JSON.parse(localStorage.getItem("current_user"));
 
+// conteneur
 let container = document.querySelector("#cours_container");
 
 
-
-// bloquer accès si, non connecté
+// bloquer accès si non connecté
 if(!current_user){
-
-    // inviter l user a se connecter
-container.innerHTML = `
-<h2>Connectez-vous pour voir vos cours</h2>
-<a href="../LOGIN_LOGOUT/login.html">Se connecter</a>
-`;
-
+alert("Connectez-vous pour accéder à vos cours");
+window.location.href = "../LOGIN_LOGOUT/login.html";
 return;
 }
 
 
-// récupérer les cours enregistrés
+// récupérer données
 let mes_cours = JSON.parse(localStorage.getItem("mes_cours")) || {};
-
-
-// identifier utilisateur
 let email = current_user.contact;
-
-
-//récupérer ses cours
 let cours_user = mes_cours[email] || [];
 
-
-// scores quiz
 let scores = JSON.parse(localStorage.getItem("scores")) || {};
-
 let scores_user = scores[email] || {};
 
-
-// afficher les cours
 container.innerHTML = "";
 
 
-// si aucun cours
-
+// aucun cours
 if(cours_user.length === 0){
 
 container.innerHTML = `
-<h2>Vous n'avez encore suivi aucun cours</h2>
+<p class="vide_message">
+Vous n'avez encore suivi aucun cours
+</p>
 `;
 
 return;
@@ -55,36 +42,29 @@ return;
 }
 
 
-// afficher chaque cours
+// afficher cours
 cours_user.forEach(function(cours){
 
 let lien = "";
 
-// définir lien cours 
-if(cours === "javascript") lien = "../DESCRIPTION MODULE/js.html";
-if(cours === "php") lien = "../DESCRIPTION MODULE/php.html";
-if(cours === "linux") lien = "../DESCRIPTION MODULE/linux.html";
-if(cours === "sql") lien = "../DESCRIPTION MODULE/sql.html";
-if(cours === "html") lien = "../DESCRIPTION MODULE/html_css.html";
+if(cours === "javascript") lien = "../DESCRIPTION_MODULE/js.html";
+if(cours === "php") lien = "../DESCRIPTION_MODULE/php.html";
+if(cours === "linux") lien = "../DESCRIPTION_MODULE/linux.html";
+if(cours === "sql") lien = "../DESCRIPTION_MODULE/sql.html";
+if(cours === "html") lien = "../DESCRIPTION_MODULE/html_css.html";
 
 
-/* récupérer score */
+// score
 let score = scores_user[cours];
-
-
-/* texte score */
 
 let texte_score = "Quiz non fait";
 
 if(score !== undefined){
-
 texte_score = "Score : " + score + " / 5";
-
 }
 
 
-// afficher
-
+// afficher carte
 container.innerHTML += `
 <a href="${lien}" class="cours_card">
 
@@ -92,8 +72,39 @@ container.innerHTML += `
 
 <p>${texte_score}</p>
 
+<button class="btn_supprimer" data-cours="${cours}">
+Supprimer
+</button>
+
 </a>
 `;
+
+});
+
+
+// suppression cours
+let boutons = document.querySelectorAll(".btn_supprimer");
+
+boutons.forEach(function(btn){
+
+btn.addEventListener("click", function(e){
+
+// empêcher ouverture du lien
+e.preventDefault();
+e.stopPropagation();
+
+let cours = btn.dataset.cours;
+
+// supprimer du tableau
+mes_cours[email] = mes_cours[email].filter(c => c !== cours);
+
+// sauvegarder
+localStorage.setItem("mes_cours", JSON.stringify(mes_cours));
+
+// recharger
+location.reload();
+
+});
 
 });
 

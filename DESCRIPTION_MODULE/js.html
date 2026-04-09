@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA</title>
+    <title>JavaScript</title>
     <link rel="stylesheet" href="../style.css">
 </head>
 
@@ -23,7 +23,7 @@
                     <a href="../cours.html">📚Cours</a>
                     <a href="../video.html">🎥 Vidéos</a>
                     <a href="../COURS/mes_cours.html">Mes cours</a>
-                    <a href="../ajouter.html"> ajouter</a>
+                    <a href="../ajouter.html">Ajouter</a>
                 </div>
 
                 <div class="menu_user">
@@ -38,7 +38,7 @@
 
                 </div>
             </nav>
-        </header>  
+        </header> 
 
 
 
@@ -48,7 +48,7 @@
 
 
     
-    <main>
+    <main id="main_chaque_cours">
 
         <section class="presentation-cours">
 
@@ -56,28 +56,32 @@
 
             <div class="bloc-langage">
 
-                <img src="../IMAGES_LOGO/ia.jpg" alt="IA">
+                <img src="../IMAGES_LOGO/js_img.png" alt="JavaScript">
 
-                <h2>Découvrir Le Module "IA"</h2>
+                <h2>Découvrir JavaScript</h2>
 
                 <p>
-                    L’intelligence artificielle (IA) est une branche de l’informatique qui permet aux machines d’analyser des données, d’apprendre et de prendre des décisions. Elle est aujourd’hui utilisée dans de nombreuses technologies comme les assistants vocaux, la reconnaissance d’images ou les systèmes de recommandation.
+                    JavaScript est un langage de programmation utilisé pour rendre les pages web interactives.
+                    Il permet de manipuler le contenu HTML, de gérer les événements utilisateur et de créer
+                    des applications web dynamiques directement dans le navigateur.
                     </p>
 
                     <p>
-                    Dans ce cours vous découvrirez les bases de l’intelligence artificielle, son fonctionnement et quelques exemples d’applications. L’objectif est de comprendre comment les machines peuvent apprendre à partir des données et résoudre certains problèmes.
-                    </p>
+                    Dans ce cours vous apprendrez les bases du langage : variables, conditions, fonctions,
+                    tableaux et manipulation du DOM. À la fin du cours vous pourrez créer des scripts
+                    capables de rendre vos sites web plus interactifs et plus intelligents.
+                </p>
                 </div>
 
                 <div class="actions-langage">
-                     <a href="" class="btn-video">VOIR LA VIDEO</a>
+                     <a href="https://youtu.be/Ny3iznrppnU?si=_-X7FgnJWW5my72-" class="btn-video">VOIR LA VIDEO</a>
                      
-                    <a href="../COURS/cours_ia.html" class="btn-cours">VOIR LE COURS PDF</a>
+                    <a href="../COURS/cours_js.html" class="btn-cours">VOIR LE COURS PDF</a>
 
-                    <button class="btn_ajouter_cours" data-cours="ia">
+                    <button class="btn_ajouter_cours" data-cours="js">
                     AJOUTER À MES COURS </button>
 
-                    <a href="/QUIZ/quiz_ia.html" class="btn-quiz">FAIRE LE QUIZ</a>
+                    <a href="../QUIZ/quiz_js.html" class="btn-quiz">FAIRE LE QUIZ</a>
                 </div>
 
         </section>
@@ -118,10 +122,10 @@
         <div class="footer_bloc">
             <h4>Cours</h4>
 
-            <a href="js.html">JavaScript</a>
-            <a href="php.html">PHP</a>
-            <a href="sql.html">SQL</a>
-            <a href="linux.html">Linux</a>
+            <a href="../DESCRIPTION_MODULE/js.html">JavaScript</a>
+            <a href="../DESCRIPTION_MODULE/php.html">PHP</a>
+            <a href="../DESCRIPTION_MODULE/sql.html">SQL</a>
+            <a href="../DESCRIPTION_MODULE/linux.html">Linux</a>
         </div>
 
         <div class="footer_bloc">
@@ -141,16 +145,12 @@
     </footer>
 
 
-
-
-
-
-
     <!-- Script Generale -->
     <script src="../script.js"></script>
 
     <!-- Pour ajouter les Cours dans "mes cours" -->
     <script src="../COURS/ajouter_cours.js"></script>
+    
     
 </body>
 </html>

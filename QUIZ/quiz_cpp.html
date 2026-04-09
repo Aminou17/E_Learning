@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LINUX</title>
+    <title>QUIZ_CPP</title>
     <link rel="stylesheet" href="../style.css">
 </head>
-
 
 <body>
     <header class="header">
@@ -23,7 +22,7 @@
                     <a href="../cours.html">📚Cours</a>
                     <a href="../video.html">🎥 Vidéos</a>
                     <a href="../COURS/mes_cours.html">Mes cours</a>
-                    <a href="../ajouter.html"> ajouter</a>
+                    <a href="../ajouter.html">Ajouter</a>
                 </div>
 
                 <div class="menu_user">
@@ -40,66 +39,34 @@
             </nav>
         </header> 
 
+    <main>
+        <div class="conteneur-quiz">
+            <h1>QUIZ C++</h1>
 
+            <div class="info-quiz">
+            <span>Niveau : Intermediare</span>
+            <span id="texteProgression">Question 1 / 5</span>
+            </div>
 
+            <div class="barre-progression">
+            <div id="progression"></div>
+            </div>
 
+            <h2 id="question"></h2>
 
+            <div id="reponses" class="reponses"></div>
 
+            <button id="btnSuivant">Suivant</button>
 
-    <section class="presentation-cours">
+            <div id="resultat"></div>
 
-            <h1>LINUX</h1>
-
-            <div class="bloc-langage">
-
-                <img src="../IMAGES_LOGO/linux.png" alt="JavaScript">
-
-                <h2>Découvrir  Linux</h2>
-
-                <p>
-                    Linux est un système d’exploitation très utilisé par les développeurs
-                    et les serveurs web. Il permet de gérer un ordinateur et d’exécuter
-                    des programmes à l’aide de commandes dans le terminal.
-                </p>
-
-                <p>
-                    Dans cette vidéo vous allez découvrir les bases de Linux et apprendre
-                    les commandes essentielles pour naviguer dans les dossiers, créer des
-                    fichiers et mieux comprendre l’environnement utilisé par les
-                    développeurs.
-                </p>
-                </div>
-
-                
-
-
-
-                <div class="actions-langage">
-                     <a href="https://youtube.com/playlist?list=PLmDBAYu4X3G6Zr_62Z_7CjxNyS_GUYQ3g&si=LjtKrQYM-ZGfpjfq" class="btn-video">VOIR LA VIDEO</a>
-                     
-                    <a href="../COURS/cours_linux.html" class="btn-cours">VOIR LE COURS PDF</a>
-
-                    <button class="btn_ajouter_cours" data-cours="linux">
-                    AJOUTER À MES COURS </button>
-
-                    <a href="../QUIZ/quiz_linux.html" class="btn-quiz">FAIRE LE QUIZ</a>
-                </div>
-
-        </section>
-
-
+            <button id="btnRecommencer" style="display:none">Refaire le quiz</button>
+            
+            <button id="btnRetour" style="display:none">Retour aux cours</button>
+            
+        </div>
         
-
-
-
-
-
-
-
-
-
-
-
+    </main>
 
 
 
@@ -127,10 +94,10 @@
         <div class="footer_bloc">
             <h4>Cours</h4>
 
-            <a href="../DESCRIPTION MODULE/js.html">JavaScript</a>
-            <a href="../DESCRIPTION MODULE/php.html">PHP</a>
-            <a href="../DESCRIPTION MODULE/sql.html">SQL</a>
-            <a href="../DESCRIPTION MODULE/linux.html">Linux</a>
+            <a href="../DESCRIPTION_MODULE/js.html">JavaScript</a>
+            <a href="../DESCRIPTION_MODULE/php.html">PHP</a>
+            <a href="../DESCRIPTION_MODULE/sql.html">SQL</a>
+            <a href="../DESCRIPTION_MODULE/linux.html">Linux</a>
         </div>
 
         <div class="footer_bloc">
@@ -150,28 +117,17 @@
     </footer>
 
 
-
-
-
-
-
-    <!-- Script Generale -->
-    <script src="../script.js"></script>
-
-    <!-- Pour ajouter les Cours dans "mes cours" -->
-    <script src="../COURS/ajouter_cours.js"></script>
-
-
-
-
-
-
-
-    <!-- Script Generale -->
-    <script src="../script.js"></script>
-
-    <!-- Pour ajouter les Cours dans "mes cours" -->
-    <script src="../COURS/ajouter_cours.js"></script>
     
+
+
+        <!-- Contient la fonction Sauvegrder_score -->
+        <script src="sauvegarde_score.js"></script>
+
+        <!-- Gere Les Question Repones Score -->
+        <script src="quiz_cpp.js"></script>
+
+        <!-- Script Global De l'Application, Pour interaction, Connection -->
+        <script src="../script.js"></script>
 </body>
 </html>
+

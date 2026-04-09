@@ -1,30 +1,50 @@
-/*** QUIZ HTML / CSS ***/
+/*** QUIZ C++ ***/
 
 const questions = [
 {
-question:"Quelle propriété CSS permet de changer la couleur du texte ?",
-answers:["text-color","color","font-color"],
+question:"Quel concept de la programmation orientée objet permet à une classe d'utiliser les caractéristiques d'une autre classe ?",
+answers:[
+"L'encapsulation",
+"L'héritage",
+"La compilation"
+],
 correct:1
 },
 {
-question:"Quelle balise HTML est utilisée pour créer un lien ?",
-answers:["<link>","<a>","<href>"],
-correct:1
-},
-{
-question:"Quelle propriété CSS permet de transformer un élément en conteneur flex ?",
-answers:["display:flex","flex:display","layout:flex"],
+question:"Que permet le polymorphisme en C++ ?",
+answers:[
+"Utiliser plusieurs formes pour une même fonction",
+"Créer plusieurs programmes",
+"Supprimer une fonction"
+],
 correct:0
 },
 {
-question:"Quelle balise HTML est utilisée pour insérer une image ?",
-answers:["<image>","<img>","<src>"],
-correct:1
+question:"Quel mot-clé permet de définir une méthode qui peut être redéfinie dans une classe dérivée ?",
+answers:[
+"virtual",
+"static",
+"const"
+],
+correct:0
 },
 {
-question:"Quelle propriété CSS permet d'ajouter un espace intérieur dans un élément ?",
-answers:["margin","padding","spacing"],
-correct:1
+question:"Quel concept consiste à cacher les détails internes d'une classe et contrôler l'accès aux données ?",
+answers:[
+"L'encapsulation",
+"L'héritage",
+"La compilation"
+],
+correct:0
+},
+{
+question:"Quelle structure permet de définir un type regroupant variables et fonctions ?",
+answers:[
+"class",
+"array",
+"loop"
+],
+correct:0
 }
 ]
 
@@ -149,7 +169,7 @@ finQuiz()
 
 function finQuiz(){
 
-question.textContent = "Quiz HTML / CSS terminé"
+question.textContent = "Quiz C++ terminé"
 
 reponses.innerHTML = ""
 
@@ -182,7 +202,7 @@ btnRecommencer.style.display = "inline-block"
 btnRetour.style.display = "inline-block"
 
 
-sauvegarder_score("html_css", score, questions.length)
+sauvegarder_score("cpp", score, questions.length)
 
 }
 
@@ -193,7 +213,7 @@ location.reload()
 })
 
 btnRetour.addEventListener("click", function(){
-window.location.href = "../DESCRIPTION_MODULE/html_css.html"
+window.location.href = "../DESCRIPTION_MODULE/cpp.html"
 })
 
 

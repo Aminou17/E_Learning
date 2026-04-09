@@ -52,7 +52,7 @@ nav{
     padding: 80px 0;
 }
 
-.contaire_input {
+.container_input {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,14 +73,14 @@ nav{
     margin-bottom: 45px;
 
 }
-.contaire_input select{
+.container_input select{
 width: 91%;
     padding: 6px 12px;
     border-radius: 5px;
     border: 1px solid #ccc;
 }
 
-.contaire_input input {
+.container_input input {
     width: 85%;
     padding: 6px 12px;
     border-radius: 5px;
@@ -286,6 +286,23 @@ margin-bottom:10px;
     text-decoration:none;
     color:white;
     font-size:20px;
+}
+
+
+/* supprimer de mes cours */
+.btn_supprimer{
+margin-top:10px;
+padding:6px 10px;
+font-size:14px;
+background:#e01414a7;
+color:rgb(255, 255, 255);
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.btn_supprimer:hover{
+background:#dc2626;
 }
 
 
@@ -803,4 +820,66 @@ margin-top:10px;
 margin-top:20px;
 text-align:center;
 font-size:20px;
+}
+
+
+
+
+
+
+
+
+
+
+/* RESULTAT QUIZ */
+
+#resultat{
+margin-top: 20px;
+padding: 20px;
+
+font-size: 18px;
+font-weight: 500;
+text-align: center;
+
+border-radius: 10px;
+
+background: #f5f7ff;
+border: 1px solid #dbe2ff;
+
+color: #333;
+
+box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+display:none;
+}
+
+#btnRecommencer,
+#btnRetour{
+
+margin-top: 15px;
+margin-right: 10px;
+
+padding: 10px 18px;
+
+border: none;
+border-radius: 6px;
+
+cursor: pointer;
+
+font-size: 14px;
+font-weight: 500;
+}
+
+#btnRetour {
+    background-color: #184895;
+}
+#btnRetour:hover {
+    background-color: #2563eb;
+}
+#btnRecommencer{
+background: #c6a501;
+color: white;
+}
+
+#btnRecommencer:hover{
+background: #05b514;
 }

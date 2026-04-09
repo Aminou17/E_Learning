@@ -1,38 +1,41 @@
-// INSCRIPTION D'un USER
+// INSCRIPTION D'UN UTILISATEUR
 
-let form_inscription = document.querySelector("#forme_inscription");
 
-if(form_inscription){
+let current_user = JSON.parse(localStorage.getItem("current_user"));
+
+if(current_user){
+window.location.href = "../index.html";
+}
+
+
+const form_inscription = document.querySelector("#forme_inscription");
+
+if (form_inscription) {
+
 form_inscription.addEventListener("submit", function(e){
 
-/* empêcher le rechargement de la page */
+// empêcher le rechargement
 e.preventDefault();
 
 
-   // RECUPERATION DES DONNES
-// nom
-let nom = document.querySelector("#name_inscription").value.trim();
+// RECUPERATION DES DONNEES
 
-// récupérer le prénom
-let prenom = document.querySelector("#firstName_inscription").value.trim();
-
-// pays
-let pays = document.querySelector("#country_inscription").value;
-
-// tél
-let contact = document.querySelector("#mail_inscription").value.trim();
-
-// le mot de passe 
-let mot_de_passe = document.querySelector("#passwd_input").value;
-
-/* récupérer la confirmation du mot de passe */
-let confirm_pass = document.querySelector("#confirm_passwd_input").value;
+const nom = document.querySelector("#name_inscription").value.trim();
+const prenom = document.querySelector("#firstName_inscription").value.trim();
+const pays = document.querySelector("#country_inscription").value;
+const contact = document.querySelector("#mail_inscription").value.trim();
+const mot_de_passe = document.querySelector("#passwd_input").value;
+const confirm_pass = document.querySelector("#confirm_passwd_input").value;
 
 
+// VERIFIER LE PAYS
+if(pays === ""){
+alert("Veuillez choisir un pays");
+return;
+}
 
-   // VERIFICATION MOT DE PASSE
 
-// vérifier si les deux password sont identiques
+// VERIFIER LE MOT DE PASSE
 if(mot_de_passe !== confirm_pass){
 
 alert("Les mots de passe ne correspondent pas");
@@ -41,19 +44,22 @@ return;
 }
 
 
-// RECUPERER LES USERS
+// MOT DE PASSE MINIMUM
+if(mot_de_passe.length < 6){
 
-//  utilisateurs déjà enregistrés 
+alert("Mot de passe trop court (minimum 6 caractères)");
+return;
+
+}
+
+
+// RECUPERER LES UTILISATEURS EXISTANTS
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
 
-
-//  VERIFIER SI UTILISATEUR EXISTE
-
-//    chercher si le contact existe déjà
+// VERIFIER SI L'UTILISATEUR EXISTE
 let existe = users.find(user => user.contact === contact);
 
-// si l'utilisateur existe déjà
 if(existe){
 
 alert("Cet utilisateur existe déjà");
@@ -62,10 +68,8 @@ return;
 }
 
 
-//   CREER UN NOUVEL UTILISATEUR
-
-/* créer un objet utilisateur */
-let new_user = {
+// CREER LE NOUVEL UTILISATEUR
+const new_user = {
 
 nom: nom,
 prenom: prenom,
@@ -76,16 +80,18 @@ mot_de_passe: mot_de_passe
 };
 
 
-// ajouter l'utilisateur dans le tableau
+// AJOUTER AU TABLEAU
 users.push(new_user);
 
 
-/* sauvegarder dans localStorage */
+// SAUVEGARDER DANS LOCALSTORAGE
 localStorage.setItem("users", JSON.stringify(users));
+
+
 alert("Inscription réussie");
 
 
-// redirection vers la page de connexion
+// REDIRECTION
 window.location.href = "login.html";
 
 });

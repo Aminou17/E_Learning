@@ -1,3 +1,5 @@
+/*** QUIZ SQL ***/
+
 const questions = [
 
 {
@@ -44,9 +46,11 @@ correct:1
 
 ]
 
-let questionActuelle = 0
+
+let indexQuestion = 0
 let score = 0
-let reponseChoisie = null
+let choix = null
+
 
 const question = document.getElementById("question")
 const reponses = document.getElementById("reponses")
@@ -55,70 +59,160 @@ const progression = document.getElementById("progression")
 const texteProgression = document.getElementById("texteProgression")
 const resultat = document.getElementById("resultat")
 
-function chargerQuestion(){
+const btnRecommencer = document.getElementById("btnRecommencer")
+const btnRetour = document.getElementById("btnRetour")
 
-let q = questions[questionActuelle]
+
+
+function afficherQuestion(){
+
+let q = questions[indexQuestion]
 
 question.textContent = q.question
 
-reponses.innerHTML=""
+reponses.innerHTML = ""
 
-reponseChoisie=null
+choix = null
 
 texteProgression.textContent =
-"Question " + (questionActuelle+1) + " / " + questions.length
+"Question " + (indexQuestion + 1) + " / " + questions.length
 
 progression.style.width =
-(questionActuelle/questions.length)*100 + "%"
+((indexQuestion + 1) / questions.length) * 100 + "%"
 
-q.answers.forEach((a,i)=>{
 
-let btn = document.createElement("button")
+q.answers.forEach(function(rep,i){
 
-btn.textContent = a
+let bouton = document.createElement("button")
+bouton.textContent = rep
 
-btn.addEventListener("click", () => {
-reponseChoisie = i
+bouton.addEventListener("click", function(){
+
+choix = i
+
+document.querySelectorAll("#reponses button")
+.forEach(function(b){
+b.classList.remove("selection")
 })
 
-reponses.appendChild(btn)
+bouton.classList.add("selection")
+
+})
+
+reponses.appendChild(bouton)
 
 })
 
 }
 
-btnSuivant.addEventListener("click", () => {
 
-if(reponseChoisie === null) return
 
-if(reponseChoisie === questions[questionActuelle].correct){
+btnSuivant.addEventListener("click", function(){
+
+if(choix === null) return
+
+
+let user = localStorage.getItem("current_user")
+
+if(!user){
+
+let rep = confirm("Vous devez être connecté pour continuer le quiz. Se connecter ?")
+
+if(rep){
+window.location.href = "../LOGIN_LOGOUT/login.html"
+}
+
+return
+}
+
+
+let bonne = questions[indexQuestion].correct
+let boutons = document.querySelectorAll("#reponses button")
+
+boutons.forEach(function(btn,i){
+
+btn.disabled = true
+
+if(i === bonne){
+btn.classList.add("bonne")
+}
+
+if(i === choix && i !== bonne){
+btn.classList.add("mauvaise")
+}
+
+})
+
+
+if(choix === bonne){
 score++
 }
 
-questionActuelle++
 
-if(questionActuelle < questions.length){
-chargerQuestion()
+setTimeout(function(){
+
+indexQuestion++
+
+if(indexQuestion < questions.length){
+afficherQuestion()
 }else{
 finQuiz()
 }
 
+},1000)
+
 })
+
+
 
 function finQuiz(){
 
-question.textContent="Quiz SQL terminé"
+question.textContent = "Quiz SQL terminé"
 
-reponses.innerHTML=""
+reponses.innerHTML = ""
 
-btnSuivant.style.display="none"
+btnSuivant.style.display = "none"
 
-progression.style.width="100%"
+progression.style.width = "100%"
 
-resultat.textContent="Score : "+score+" / "+questions.length
+
+let pourcentage = Math.round((score / questions.length) * 100)
+
+let message = ""
+
+if(pourcentage >= 80){
+message = "Excellent travail !"
+}
+else if(pourcentage >= 50){
+message = "Bon résultat, continuez ainsi."
+}
+else{
+message = "Résultat insuffisant. Essayez de revoir le cours."
+}
+
+resultat.style.display = "block"
+
+resultat.textContent =
+message + " Score : " + score + " / " + questions.length
+
+
+btnRecommencer.style.display = "inline-block"
+btnRetour.style.display = "inline-block"
+
+
+sauvegarder_score("sql", score, questions.length)
 
 }
 
-/* démarrer le quiz */
 
-chargerQuestion()
+
+btnRecommencer.addEventListener("click", function(){
+location.reload()
+})
+
+btnRetour.addEventListener("click", function(){
+window.location.href = "../DESCRIPTION_MODULE/sql.html"
+})
+
+
+afficherQuestion()

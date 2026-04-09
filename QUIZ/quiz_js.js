@@ -1,6 +1,4 @@
-/*** QUIZ JS ***/
-let current_user = JSON.parse(localStorage.getItem("current_user"));
-
+/*** QUIZ JAVASCRIPT ***/
 
 const questions = [
 {
@@ -8,7 +6,6 @@ question:"Quelle est la sortie de : console.log(2 + '2') ?",
 answers:["4","22","NaN"],
 correct:1
 },
-
 {
 question:"Quelle est la différence principale entre == et === en JavaScript ?",
 answers:[
@@ -18,38 +15,36 @@ answers:[
 ],
 correct:1
 },
-
 {
-question:"Que fait la méthode array.filter() ?",
+question:"Que fait la méthode filter() sur un tableau ?",
 answers:[
-"Supprime définitivement les éléments du tableau",
-"Retourne un nouveau tableau avec les éléments qui respectent une condition",
-"Transforme chaque élément du tableau"
+"Elle supprime les éléments",
+"Elle crée un nouveau tableau selon une condition",
+"Elle transforme chaque élément"
 ],
 correct:1
 },
-
 {
 question:"Quelle est la portée d'une variable déclarée avec let ?",
 answers:[
-"Portée globale seulement",
+"Globale seulement",
 "Portée de bloc",
 "Portée de fonction uniquement"
 ],
 correct:1
 },
-
 {
 question:"Que retourne typeof undefined ?",
 answers:["undefined","null","object"],
 correct:0
 }
-
 ]
 
-let questionActuelle = 0
+
+let indexQuestion = 0
 let score = 0
-let reponseChoisie = null
+let choix = null
+
 
 const question = document.getElementById("question")
 const reponses = document.getElementById("reponses")
@@ -58,101 +53,159 @@ const progression = document.getElementById("progression")
 const texteProgression = document.getElementById("texteProgression")
 const resultat = document.getElementById("resultat")
 
-function chargerQuestion(){
+const btnRecommencer = document.getElementById("btnRecommencer")
+const btnRetour = document.getElementById("btnRetour")
 
-    let q = questions[questionActuelle]
 
-    question.textContent = q.question
 
-    reponses.innerHTML=""
+function afficherQuestion(){
 
-    reponseChoisie=null
+let q = questions[indexQuestion]
 
-    texteProgression.textContent =
-    "Question " + (questionActuelle+1) + " / " + questions.length
+question.textContent = q.question
 
-    progression.style.width =
-    (questionActuelle/questions.length)*100 + "%"
+reponses.innerHTML = ""
 
-    q.answers.forEach((a,i)=>{
+choix = null
 
-        let btn = document.createElement("button")
+texteProgression.textContent =
+"Question " + (indexQuestion + 1) + " / " + questions.length
 
-        btn.textContent = a
+progression.style.width =
+((indexQuestion + 1) / questions.length) * 100 + "%"
 
-        btn.addEventListener("click", () => {
-            reponseChoisie = i
-        })
 
-    reponses.appendChild(btn)
+q.answers.forEach(function(rep,i){
 
-    })
+let bouton = document.createElement("button")
+bouton.textContent = rep
+
+bouton.addEventListener("click", function(){
+
+choix = i
+
+document.querySelectorAll("#reponses button")
+.forEach(function(b){
+b.classList.remove("selection")
+})
+
+bouton.classList.add("selection")
+
+})
+
+reponses.appendChild(bouton)
+
+})
 
 }
 
 
-btnSuivant.addEventListener("click", () => {
 
-// si l'utilisateur n'est pas connecté
-if(!current_user){
+btnSuivant.addEventListener("click", function(){
 
-alert("Connectez-vous pour répondre au quiz");
+if(choix === null) return
 
-return;
 
+let user = localStorage.getItem("current_user")
+
+if(!user){
+
+let rep = confirm("Vous devez être connecté pour continuer le quiz. Se connecter ?")
+
+if(rep){
+window.location.href = "../LOGIN_LOGOUT/login.html"
 }
 
-// vérifier si une réponse est choisie 
-if(reponseChoisie === null) return
-
-/* vérifier la bonne réponse */
-
-if(reponseChoisie === questions[questionActuelle].correct){
-score++
+return
 }
 
-questionActuelle++
 
-// charger la prochaine question
-if(questionActuelle < questions.length){
-chargerQuestion()
-}else{
-finQuiz()
+let bonne = questions[indexQuestion].correct
+let boutons = document.querySelectorAll("#reponses button")
+
+boutons.forEach(function(btn,i){
+
+btn.disabled = true
+
+if(i === bonne){
+btn.classList.add("bonne")
+}
+
+if(i === choix && i !== bonne){
+btn.classList.add("mauvaise")
 }
 
 })
 
 
+if(choix === bonne){
+score++
+}
 
+
+setTimeout(function(){
+
+indexQuestion++
+
+if(indexQuestion < questions.length){
+afficherQuestion()
+}else{
+finQuiz()
+}
+
+},1000)
+
+})
 
 
 
 function finQuiz(){
 
-// afficher le message de fin
 question.textContent = "Quiz JavaScript terminé"
 
-
-// vider les réponses
 reponses.innerHTML = ""
 
-
-// cacher le bouton suivant
 btnSuivant.style.display = "none"
 
-
-//la barre de progression à 100% */
 progression.style.width = "100%"
 
 
-// afficher le score
-resultat.textContent = "Score : " + score + " / " + questions.length
+let pourcentage = Math.round((score / questions.length) * 100)
 
+let message = ""
+
+if(pourcentage >= 80){
+message = "Excellent travail !"
+}
+else if(pourcentage >= 50){
+message = "Bon résultat, continuez ainsi."
+}
+else{
+message = "Résultat insuffisant. Essayez de revoir le cours."
+}
+
+resultat.style.display = "block"
+resultat.textContent =
+message + " Score : " + score + " / " + questions.length
+
+
+btnRecommencer.style.display = "inline-block"
+btnRetour.style.display = "inline-block"
 
 
 sauvegarder_score("javascript", score, questions.length)
+
 }
 
 
-// démarrer le quiz 
-chargerQuestion()
+
+btnRecommencer.addEventListener("click", function(){
+location.reload()
+})
+
+btnRetour.addEventListener("click", function(){
+window.location.href = "../DESCRIPTION_MODULE/js.html"
+})
+
+
+afficherQuestion()
